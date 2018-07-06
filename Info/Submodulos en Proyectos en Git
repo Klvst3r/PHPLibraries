@@ -29,11 +29,39 @@ Begining with PHP Libraries
 git clone git@github.com:Klvst3r/PHPLibraries.git
 
 
-git clone git://github.com/HuntingBears/aguilas.git
-cd aguilas
-documentation/extradocs
+Deseamos agregar el siguiente submodulo
 
+datatableToExcel
 
+Con el ejemplo:
 git submodule add https://github.com/GeekyTheory/GeekyTheory.Toolkit.git
+
+Inbtentamos:
+git submodule add git@github.com:Klvst3r/PHPLibraries/datatableToExcel.git
+
+Lo cual fallo puesto que lo correcto es:
+git submodule add https://github.com/Klvst3r/PHPLibraries.git datatableToExcel
+
+Siguiendo los pasos de:
+https://git-scm.com/book/es/v2/Herramientas-de-Git-Subm%C3%B3dulos
+
+
+git status
+
+git submodule init
+
+git submodule update
+
+git fetch
+
+git merge origin master
+
+git add .
+
+git commit -m "Add submodule"
+
+git push origin master
+
+
 
 
