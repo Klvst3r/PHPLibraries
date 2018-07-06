@@ -23,3 +23,17 @@ https://gist.github.com/pablomp/6139129
 
 
 
+
+Begining with PHP Libraries
+
+git clone git@github.com:Klvst3r/PHPLibraries.git
+
+
+git clone git://github.com/HuntingBears/aguilas.git
+cd aguilas
+documentation/extradocs
+
+
+git submodule add https://github.com/GeekyTheory/GeekyTheory.Toolkit.git
+
+
