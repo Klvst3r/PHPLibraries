@@ -1,0 +1,3 @@
+[submodule "datatableToExcel"]
+	path = datatableToExcel
+	url = https://github.com/Klvst3r/PHPLibraries.git
