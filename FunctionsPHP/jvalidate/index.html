@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Jquery Validate email checkbox select box</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="es" />
+<script type="text/javascript" src="js/jquery_1.4.js"></script>
+<script type="text/javascript" src="js/jquery_validate.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#formInscripcion').validate({
+		rules: {
+		'nombre': 'required',
+		'apellido': 'required',
+		'numero_identidad': { required: true, number: true },
+		'email': { required: true, email: true },
+		'tipo_identidad': 'required',
+		'deportes[]': { required: true, minlength: 1 }
+		},
+		messages: {
+		'nombre': 'Debe ingresar el nombre',
+		'apellido': 'Debe ingresar el apellido',
+		'numero_identidad': { required: 'Debe ingresar el número de documento de identidad', number: 'Debe ingresar un número' },
+		'email': { required: 'Debe ingresar un correo electrónico', email: 'Debe ingresar el correo electrónico con el formato correcto. Por ejemplo: u@localhost.com' },
+		'tipo_identidad': 'Debe ingresar el número de documento',
+		'deportes[]': 'Debe seleccionar mínimo un deporte'
+		},
+		debug: true,
+		/*errorElement: 'div',*/
+		//errorContainer: $('#errores'),
+		submitHandler: function(form){
+			alert('El formulario ha sido validado correctamente!');
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h1>Jquery Validate email checkbox select box</h1>
+    <form id="formInscripcion" method="post" action="">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <p><label for="nombre">Primer Nombre:</label> <input type="text" name="nombre" id="nombre" /></p>
+            <p><label for="apellido">Primer Apellido:</label> <input type="text" name="apellido" id="apellido" /></p>
+            <p><label for="numero_identidad">Número Documento Identidad:</label> <input type="text" name="numero_identidad" id="numero_identidad" /></p>
+			<p><label for="email">Email:</label> <input type="text" name="email" id="email" /></p>
+            <p><label for="tipo_identidad">Tipo Documento Identidad:</label>
+                <select name="tipo_identidad" id="tipo_identidad">
+                    <option value="">Tipo de Documento</option>
+                    <option value="1">Tarjeta Identidad</option>
+                    <option value="2">Cédula</option>
+                </select>
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Seleccione deportes</legend>
+            <p><label for="deporte_1">Baloncesto</label> <input type="checkbox" name="deportes[]" id="deporte_1" value="1" /></p>
+			<p><label for="deporte_2">Natación</label> <input type="checkbox" name="deportes[]" id="deporte_2" value="2" /></p>
+			<p><label for="deporte_3">Fútbol</label> <input type="checkbox" name="deportes[]" id="deporte_3" value="3" /></p>
+			<p><label for="deporte_4">Ciclismo</label> <input type="checkbox" name="deportes[]" id="deporte_4" value="4" /></p>
+        </fieldset>
+        <p><input type="submit" name="enviar" value="Enviar" /></p>
+    </form>
+</body>
+</html>

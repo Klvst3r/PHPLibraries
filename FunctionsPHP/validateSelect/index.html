@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Jquery Validate email checkbox select box</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="es" />
+<script type="text/javascript" src="js/jquery_1.4.js"></script>
+<script type="text/javascript" src="js/jquery_validate.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#formInscripcion').validate({
+		rules: {
+			'tipo_identidad': 'required',
+		},
+		messages: {
+				'tipo_identidad': 'Debe ingresar el número de documento',
+
+		},
+		//debug: true,
+		/*errorElement: 'div',*/
+		//errorContainer: $('#errores'),
+
+	});
+});
+</script>
+</head>
+<body>
+<h1>Jquery Validate email checkbox select box</h1>
+    <form id="formInscripcion" method="post" action="valida.html">
+        <fieldset>
+            <legend>Datos Personales</legend>
+
+                <select name="tipo_identidad" id="tipo_identidad">
+                    <option value="">Tipo de Documento</option>
+                    <option value="1">Tarjeta Identidad</option>
+                    <option value="2">Cédula</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <p><input type="submit" name="enviar" value="Enviar" /></p>
+    </form>
+</body>
+</html>

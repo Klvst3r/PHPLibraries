@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate Select</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="well">
+                <div class="form-group">
+                    <label for="name">Opción</label>
+                    <select name="options" id="options" class="form-control">
+                        <option value="" selected="selected">Seleccione...</option>
+                        <option value="opcion1">Opción 1</option>
+                        <option value="opcion2">Opción 2</option>
+                        <option value="opcion3">Opción 2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="validate" class="btn btn-primary">
+                        Validar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script >
+    $('#validate').click(function() {
+
+    if ($('#options').val().trim() === '') {
+        alert('Debe seleccionar una opción');
+
+    } else {
+        alert('Campo correcto');
+    }
+});
+//# sourceURL=pen.js
+</script>
+    
+</body>
+</html>
